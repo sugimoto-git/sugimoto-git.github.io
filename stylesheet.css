@@ -1,271 +1,241 @@
+/* Reset & Base Styles */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #bbbbbb;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --accent-color: #00aaff;
+    --hover-color: #0088cc;
+    --font-main: 'Noto Sans JP', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+}
+
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: "Hiragino Kaku Gothic ProN";
+    font-family: var(--font-main);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 a {
-  text-decoration: none;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--hover-color);
 }
 
 .container {
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.top-wrapper {
-  padding: 180px 0 100px 0;
-  background-image: url(top.png);
-  background-size: cover;
-  color: white;
-  text-align: center;
-}
-
-.top-wrapper h1 {
-  opacity: 0.7;
-  font-size: 45px;
-  letter-spacing: 5px;
-}
-
-.top-wrapper p {
-  opacity: 0.7;
-  font-size: 16px;
-  margin-bottom: 40px;
-}
-
-.btn-wrapper {
-  text-align: center;
-}
-
-.btn-wrapper p {
-  margin-bottom: 20px;
-}
-
-.signup {
-  background-color: #239b76;
-}
-
-.facebook {
-  background-color: #3b5998;
-  margin-right: 10px;
-}
-
-.twitter {
-  background-color: #55acee;
-}
-
-.btn {
-  padding: 8px 24px;
-  color: white;
-  display: inline-block;
-  opacity: 0.8;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.btn:hover {
-  opacity: 1;
-}
-
-.fa {
-  margin-right: 5px;
-}
-
+/* Header */
 header {
-  height: 65px;
-  width: 100%;
-  background-color: rgba(34,49,52,0.9);
-  position :fixed;
-  top: 0;
-  z-index: 10;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  width: 124px;
-  margin-top: 20px;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
-.header-left {
-  float: left;
+header nav ul {
+    display: flex;
+    list-style: none;
 }
 
-.header-right {
-  float: right;
-  margin-right: -25px;
+header nav ul li {
+    margin-left: 2rem;
 }
 
-.header-right a {
-  line-height: 65px;
-  padding: 0 25px;
-  color: white;
-  display: block;
-  float: left;
-  transition: all 0.5s;
+header nav ul li a {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 5px;
 }
 
-.header-right a:hover {
-  background-color: rgba(255,255,255,0.3);
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
-.lesson-wrapper {
-  height: 580px;
-  padding-bottom: 80px;
-  padding-left: 5%;
-  padding-right: 5%;
-  background-color: #f7f7f7;
-  text-align: center;
+header nav ul li a:hover::after {
+    width: 100%;
 }
 
-.heading {
-  padding-top: 80px;
-  padding-bottom: 50px;
-  color: #5f5d60;
+/* Hero Section */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.8)), url('https://source.unsplash.com/random/1600x900/?technology,abstract') no-repeat center center/cover;
 }
 
-.heading h2 {
-  font-weight: normal;
+#hero h1 {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease-out;
 }
 
-.lesson {
-  float: left;
-  width: 25%;
+#hero p {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: backwards;
 }
 
-.lesson-icon {
-  position: relative;
+/* Works Section */
+#works {
+    padding: 6rem 0;
 }
 
-.lesson-icon p {
-  position: absolute;
-  top: 37%;
-  width: 100%;
-  color: white;
+#works h2 {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 4rem;
 }
 
-.text-contents {
-  width: 80%;
-  display: inline-block;
-  margin-top: 15px;
-  font-size: 13px;
-  color: #b3aeb5;
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
-.heading h3 {
-  font-weight: normal;
+.card {
+    background: var(--card-background);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.message-wrapper {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 80px;
-  text-align: center;
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
-.message {
-  padding: 15px 40px;
-  background-color: #5dca88;
-  cursor: pointer;
-  box-shadow: 0px 7px #1a7940;
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
 }
 
-.message:active {
-  position: relative;
-  top: 7px;
-  box-shadow: none;
+.card-content {
+    padding: 1.5rem;
 }
 
-footer img {
-  width: 125px;
+.card-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.card-links a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+}
+
+/* Footer */
+footer {
+    background: var(--card-background);
+    text-align: center;
+    padding: 4rem 0;
 }
 
 footer p {
-  color: #b3aeb5;
-  font-size: 12px;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
-footer {
-  padding-top: 30px;
-  padding-bottom: 20px;
+.social-links a {
+    font-size: 2rem;
+    margin: 0 1rem;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
 }
 
-.menu-icon {
-  color: white;
-  float: right;
-  font-size: 25px;
-  padding: 21px 0;
-  display: none;
+.social-links a:hover {
+    color: var(--primary-color);
 }
 
-.clear {
-  clear: left;
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.9rem !important;
+    color: #666;
 }
 
-@media all and (max-width: 1000px) {
-  .lesson {
-    width: 50%;
-    margin-bottom: 50px;
-  }
-
-  .lesson-wrapper {
-    height: 990px;
-  }
-
-  footer {
-    text-align: center;
-  }
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@media all and (max-width: 750px) {
-  .top-wrapper h1 {
-    font-size: 32px;
-  }
-
-  .heading h2 {
-    font-size: 20px;
-  }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@media all and (max-width: 670px) {
-  .header-right {
-    display: none;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  .top-wrapper .btn {
-    width: 100%;
-  }
-
-  .twitter {
-    margin-top: 10px;
-  }
-
-  .top-wrapper {
-    text-align: left;
-  }
-
-  .top-wrapper h1 {
-    font-size: 24px;
-  }
-
-  .top-wrapper p {
-    font-size: 14px;
-  }
-
-  .lesson {
-    width: 100%;
-  }
-
-  .lesson-wrapper {
-    height: 1700px;
-  }
-
-  .message-wrapper .btn {
-    width: 100%;
-  }
+/* Responsive */
+@media (max-width: 768px) {
+    #hero h1 { font-size: 3.5rem; }
+    #hero p { font-size: 1.2rem; }
+    header .container {
+        flex-direction: column;
+    }
+    header nav {
+        margin-top: 1rem;
+    }
 }
