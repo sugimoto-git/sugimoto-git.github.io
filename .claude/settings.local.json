@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(pkill:*)",
+      "Bash(lsof:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(FLASK_APP=/mnt/c/Users/sugim_9ohckvm/sugi/Audible_paper/app.py /mnt/c/Users/sugim_9ohckvm/sugi/Audible_paper/venv/bin/python /mnt/c/Users/sugim_9ohckvm/sugi/Audible_paper/app.py)"
+    ],
+    "deny": []
+  }
+}
