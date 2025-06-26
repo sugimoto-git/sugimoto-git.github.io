@@ -122,11 +122,15 @@ header nav ul li a:hover::after {
 }
 
 /* Works Section */
-#works {
+#works,
+#recent-activity,
+#making {
     padding: 6rem 0;
 }
 
-#works h2 {
+#works h2,
+#recent-activity h2,
+#making h2 {
     text-align: center;
     font-family: var(--font-heading);
     font-size: 3rem;
@@ -186,6 +190,10 @@ header nav ul li a:hover::after {
 .card-links a:hover {
     background-color: var(--accent-color);
     color: var(--background-color);
+}
+
+#recent-activity .twitter-tweet {
+    margin: 0 auto;
 }
 
 /* Footer */
